@@ -148,7 +148,7 @@ export default function Hero() {
           >
             Tus datos ya existen.<br />
             Ahora que <em style={{ fontStyle: 'italic', fontWeight: 300, color: '#4338CA' }}>trabajen</em><br />
-            para vos.
+            para ti.
           </motion.h1>
 
           <motion.p
