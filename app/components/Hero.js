@@ -1,36 +1,30 @@
 'use client'
-
-import { useState, useLayoutEffect } from 'react'
-import { motion } from 'framer-motion'
-
-function getCurrentWeekInfo() {
-  const now = new Date()
-  const start = new Date(now.getFullYear(), 0, 1)
-  const week = Math.ceil(((now - start) / 86400000 + start.getDay() + 1) / 7)
-  return { week, year: now.getFullYear() }
-}
-
-const weeklyData = [
-  { week: 'S1', ventas: 210, margen: 25.1, pedidos: 38, rotacion: 18, disponibilidad: 94, fillRate: 91, cobertura: 22, alerts: [
-    { icon: '⚠️', bg: '#FEE2E2', title: 'Stock bajo: Producto A-182', sub: 'Quedan 2 unidades. Reposición sugerida: 40 unid.' },
-    { icon: '📈', bg: '#D1FAE5', title: 'Margen en alza', sub: 'Categoría Ferretería +18% este mes' },
-    { icon: '🚚', bg: 'FEF3C7', title: 'Entrega demorada', sub: 'Proveedor Ferraz — 1 día de retraso' }
-  ] },
-  { week: 'S2', ventas: 245, margen: 26.3, pedidos: 42, rotacion: 16, disponibilidad: 95, fillRate: 93, cobertura: 20, alerts: [
-    { icon: '✅', bg: '#D1FAE5', title: 'Todo al día', sub: 'Stock, entregas y producción OK' },
-    { icon: '📈', bg: '#D1FAE5', title: 'Ventas en alza', sub: 'S2 vs S1: +16.7%' },
-    { icon: '💰', bg: '#D1FAE5', title: 'Margen estable', sub: '+1.2 puntos vs semana pasada' }
-  ] },
-  { week: 'S3', ventas: 198, margen: 24.8, pedidos: 35, rotacion: 21, disponibilidad: 91, fillRate: 89, cobertura: 25, alerts: [
-    { icon: '⚠️', bg: '#FEE2E2', title: 'Fill rate bajo', sub: '89% esta semana. Revisar retrasos proveedores' },
-    { icon: '🚨', bg: '#FEE2E2', title: 'Rotación alta', sub: '21 días — riesgo de obsolescencia' },
-    { icon: '📉', bg: '#FEE2E2', title: 'Ventas -19%', sub: 'Vs S2 — investigar demanda' }
-  ] },
-  { week: 'S4', ventas: 289, margen: 27.2, pedidos: 51, rotacion: 14, disponibilidad: 96, fillRate: 95, cobertura: 18, alerts: [
-    { icon: '🎉', bg: '#D1FAE5', title: 'Record de pedidos', sub: '51 pedidos — +46% vs S3' },
-    { icon: '📈', bg: '#D1FAE5', title: 'Fill rate excelente', sub: '95% — clientes satisfechos' },
-    { icon: '💰', bg: '#D1FAE5', title: 'Margen récord', sub: '+2.4 puntos vs promedio' }
-  ] },
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65, delay: 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
+            style={{
+              fontFamily: 'Georgia, serif',
+              fontSize: isMobile
+                ? 'clamp(1.8rem, 6.5vw, 2.4rem)'
+                : isTablet
+                ? 'clamp(2rem, 5vw, 3rem)'
+                : isWide
+                ? 'clamp(3rem, 4vw, 4.8rem)'
+                : 'clamp(2.6rem, 4.5vw, 4rem)',
+              fontWeight: 700, lineHeight: 1.1,
+              letterSpacing: '-1.5px', color: '#0D0F1A',
+              marginBottom: !isStacked ? '44px' : '24px',
+              textAlign: isStacked ? 'center' : 'left',
+              maxWidth: isStacked ? '92%' : '100%',
+              margin: isStacked ? '0 auto 24px' : '0',
+              overflowWrap: 'break-word',
+              wordBreak: 'break-word',
+            }}
+          >
+            Tus datos ya existen.<br />
+            Ahora que <em style={{ fontStyle: 'italic', fontWeight: 300, color: '#4338CA' }}>trabajen</em> para vos
+          </motion.h1>
   { week: 'S5', ventas: 267, margen: 26.8, pedidos: 47, rotacion: 15, disponibilidad: 94, fillRate: 92, cobertura: 19, alerts: [
     { icon: '⚠️', bg: '#FEE2E2', title: 'Cobertura ajustada', sub: '19 días — planificar próximos 30' },
     { icon: '📉', bg: '#FEE2E2', title: 'Ventas -8%', sub: 'Vs S4 — revisar promociones' },
@@ -148,7 +142,11 @@ export default function Hero() {
           >
             Tus datos ya existen.<br />
             Ahora que <em style={{ fontStyle: 'italic', fontWeight: 300, color: '#4338CA' }}>trabajen</em><br />
-            para vos.
+<<<<<<< HEAD
+
+=======
+            para tu.
+>>>>>>> dcbaeb0eb52d1890173c72cd3b70d51991dd0457
           </motion.h1>
 
           <motion.p
