@@ -55,7 +55,7 @@ export async function POST(request) {
 
     await resend.emails.send({
       from: 'Nodly Web <onboarding@resend.dev>',
-      to: 'federicocastell@gmail.com',
+      to: 'nodly.work@gmail.com',
       subject: `Nuevo lead — ${nombre} · ${sector} · ${mercado}`,
       html: `
         <!DOCTYPE html>
